@@ -1,7 +1,7 @@
-<html>
+<html lang="zh-CN">
 
     <head>
-    
+        <meta charset="UTF-8">
         <script src='Box2dWeb.min.js'></script>
         <script src="Three.js"></script>
         <script src="keyboard.js"></script>
@@ -23,9 +23,9 @@
                 ballMesh       = undefined,
                 ballRadius     = 0.25,
                 keyAxis        = [0, 0],
-                ironTexture    = THREE.ImageUtils.loadTexture('/ball.png'),
-                planeTexture   = THREE.ImageUtils.loadTexture('/concrete.png'),
-                brickTexture   = THREE.ImageUtils.loadTexture('/brick.png'),
+                ironTexture    = THREE.ImageUtils.loadTexture('ball.png'),
+                planeTexture   = THREE.ImageUtils.loadTexture('concrete.png'),
+                brickTexture   = THREE.ImageUtils.loadTexture('brick.png'),
                 gameState      = undefined,
 
             // Box2D shortcuts
@@ -194,7 +194,7 @@
                         light.position.set(1, 1, 1.3);
                         light.intensity = 0;
                         var level = Math.floor((mazeDimension-1)/2 - 4);
-                        $('#level').html('Level ' + level);
+                        $('#level').html('关卡 ' + level);
                         gameState = 'fade in';
                         break;
                         
@@ -351,19 +351,21 @@
     <body>
     
     <div id='instructions'>
-        How to play Astray:
+        如何玩 Astray(误入歧途)：
         <br><br>
-        Use the arrow keys to move the ball and find the exit to the maze.
+        使用方向键控制小球移动，找到迷宫的出口。
         <br><br>
-        Vim trainees: h, j, k, l
+        熟悉 Vim 的玩家也可以使用：h、j、k、l 键进行控制。
     </div>
     
     <div id='help'>
-        Hold down the 'I' key for instructions.
+        按住 'I' 键查看说明。
+        <a href="https://github.com/wwwtyro/Astray" target="_blank" style="color: beige; text-decoration: none;">原项目仓库</a>
+        <a href="https://github.com/Firfr/Astray" target="_blank" style="color: beige; text-decoration: none;">镜像制作仓库</a>
     </div>
 
     <div id='level'>
-        Level 1
+        关卡 1
     </div>
     
     </body>
